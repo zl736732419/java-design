@@ -50,7 +50,7 @@ public class Responser {
         public Builder success() {
             responser.status = Boolean.TRUE;
             code(200);
-            message("操作成功！");
+            message("操作成功!");
             return this;
         }
 
