@@ -11,7 +11,7 @@ public class Application {
 
     @Test
     public void test() {
-        ListDirFile obj = new ModifyDateBasedListDirFile(new File("F:\\XiGua Yingshi"));
+        ListDirFile obj = new ModifyDateBasedListDirFile(new File("F:\\work"));
         obj.showFileName();
     }
 }
