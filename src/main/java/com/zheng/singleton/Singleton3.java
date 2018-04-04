@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  */
 public class Singleton3 {
 
-    private static Singleton3 instance = null;
+    private volatile static Singleton3 instance = null;
     private static ReadWriteLock lock = new ReentrantReadWriteLock();
 
     private Singleton3() {
