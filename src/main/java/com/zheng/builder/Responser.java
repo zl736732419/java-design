@@ -3,7 +3,9 @@ package com.zheng.builder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
- * 该对象为web请求结束时，服务端返回相应消息给客户端的消息数据对象
+ * 生成器模式，主要是为了创建一个复杂对象而设计的帮助类模式
+ * 主要是为了方便统一对象的创建
+ * 将一个复杂对象的创建过程放到一个工具类中完成
  * Created by zhenglian on 2016/10/21.
  */
 public class Responser {
