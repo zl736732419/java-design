@@ -28,11 +28,10 @@ public class CarAttrFactory {
             return attrs.get(key);
         }
 
-        double width = 0, height = 0, length = 0;
         String[] str = key.split("#");
-        width = Double.parseDouble(str[0]);
-        height = Double.parseDouble(str[1]);
-        length = Double.parseDouble(str[2]);
+        double width = Double.parseDouble(str[0]);
+        double height = Double.parseDouble(str[1]);
+        double length = Double.parseDouble(str[2]);
 
         CarAttr carAttr = new CarAttrImpl(width, height, length);
 
