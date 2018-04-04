@@ -14,7 +14,7 @@ public class Application {
         List<Integer> data = Lists.newArrayList(1,2,3,4,5,6,7);
         DataTask task = new LoadDataTask(data);
         while(task.hasNext()) {
-            System.out.println(task.next());
+            System.out.println((char[]) task.next());
         }
 
     }
