@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public interface Colleague {
     void giveMsg(Map<String, String> msgs);
-    void recieveMsg(String msg);
+    void receiveMsg(String msg);
     void setName(String name);
     String getName();
 }

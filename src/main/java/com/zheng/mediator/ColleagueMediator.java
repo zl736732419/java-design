@@ -26,11 +26,12 @@ public class ColleagueMediator  {
             name = entry.getKey();
             msg = entry.getValue();
             for(Colleague c : colleagues) {
-                if(!c.getName().equals(colleague.getName())) {
-                    if(StringUtils.isBlank(name) ||
-                            c.getName().equals(name)) { //发给所有人或者消息指定的接受同事
-                        c.recieveMsg(msg);
-                    }
+                if(c.getName().equals(colleague.getName())) {
+                    continue;
+                }
+                if(StringUtils.isBlank(name) ||
+                        c.getName().equals(name)) { //发给所有人或者消息指定的接受同事
+                    c.receiveMsg(msg);
                 }
             }
         }

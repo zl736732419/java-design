@@ -18,7 +18,7 @@ public class Colleague3 implements Colleague {
         mediator.deliver(this, msgs);
     }
 
-    public void recieveMsg(String msg) {
+    public void receiveMsg(String msg) {
         System.out.println(name + "收到消息：");
         System.out.println(msg);
     }
