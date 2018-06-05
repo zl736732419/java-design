@@ -10,9 +10,11 @@ import java.lang.reflect.Proxy;
  */
 public class ShapeProxyFactory {
 
-    private static ShapeProxyFactory factory = new ShapeProxyFactory();
-
     private ShapeProxyFactory() {
+    }
+
+    private static class Nested {
+        public static ShapeProxyFactory FACTORY = new ShapeProxyFactory();
     }
 
     public Object getProxy(Object proxied, Class<?>[] interfaces) {
@@ -20,7 +22,6 @@ public class ShapeProxyFactory {
     }
 
     class ShapeInvocationHandler implements InvocationHandler {
-
         private Object proxied;
 
         public ShapeInvocationHandler(Object proxied) {
@@ -33,7 +34,7 @@ public class ShapeProxyFactory {
     }
 
     public static ShapeProxyFactory getInstance() {
-        return factory;
+        return Nested.FACTORY;
     }
 
 }

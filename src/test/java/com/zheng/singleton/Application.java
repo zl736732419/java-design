@@ -48,12 +48,12 @@ public class Application {
 
     @Test
     public void singleton3() throws Exception {
-        final HashSet<Singleton3> set = Sets.newHashSet();
+        final HashSet<Singleton3_2> set = Sets.newHashSet();
 
         for(int i = 0; i < 100; i++) {
             new Thread(new Runnable() {
                 public void run() {
-                    Singleton3 instance = Singleton3.getInstance();
+                    Singleton3_2 instance = Singleton3_2.getInstance();
                     set.add(instance);
                 }
             }).start();

@@ -10,9 +10,11 @@ import java.lang.reflect.Method;
  * Created by zhenglian on 2016/10/23.
  */
 public class ShapeProxyFactory {
-    private static ShapeProxyFactory factory = new ShapeProxyFactory();
-
     private ShapeProxyFactory() {
+    }
+
+    private static class Nested {
+        public static ShapeProxyFactory FACTORY = new ShapeProxyFactory();
     }
 
     public Object getProxy(Object proxied) {
@@ -20,12 +22,7 @@ public class ShapeProxyFactory {
         enhancer.setSuperclass(proxied.getClass().getSuperclass());
         enhancer.setClassLoader(proxied.getClass().getClassLoader());
         enhancer.setCallback(new ShapeInvocationHandler(proxied));
-
         return enhancer.create();
-    }
-
-    public static ShapeProxyFactory getInstance() {
-        return factory;
     }
 
     class ShapeInvocationHandler implements InvocationHandler {
@@ -40,5 +37,7 @@ public class ShapeProxyFactory {
         }
     }
 
-
+    public static ShapeProxyFactory getInstance() {
+        return Nested.FACTORY;
+    }
 }

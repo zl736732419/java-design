@@ -14,7 +14,7 @@ public class JavaObjStreamProtoType implements Cloneable, Serializable {
 
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    protected Object clone() {
         ObjectOutputStream objOutput = null;
         ObjectInputStream objInput = null;
 
